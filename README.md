@@ -10,7 +10,7 @@ Currently, only the Windows version is packaged. If you need Mac and Linux versi
 
 https://github.com/chwrywj/VideoCutMerge/releases
 
-![](https://github.com/chwrywj/VideoCutMerge/blob/main/screenshot1.png)
+![](https://github.com/chwrywj/VideoCutMerge/blob/main/screenshot1.jpg)
 ![](https://github.com/chwrywj/VideoCutMerge/blob/main/screenshot2.png)
 
 # Related
