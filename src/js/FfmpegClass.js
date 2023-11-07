@@ -5,11 +5,10 @@ const http = require('http');
 
 module.exports = class FfmpegClass {
     constructor(props) {
-        this._cutVideoCommand;
         this._videoSupperCommand;
         this._videoServer;
         this._videoSourceInfo;
-
+        this._cutVideoCommand;
         this._mergeVideoCommand;
 
         this.setFfmpegPath();
@@ -54,55 +53,6 @@ module.exports = class FfmpegClass {
         });
     }
 
-    cutVideo(input, output, opts, progressCallback,endCallback,errorCallback) {
-        try{
-            this._cutVideoCommand = ffmpeg(input)
-                .seekInput(opts.seekInput)
-                .duration(Number((opts.duration/opts.speed).toFixed(3)))
-            if(opts.speed!=1){
-                this._cutVideoCommand = this._cutVideoCommand.videoFilters('setpts='+(1/opts.speed).toFixed(2)+'*PTS');
-                if(opts.speed==0.25)
-                    this._cutVideoCommand = this._cutVideoCommand.audioFilters('atempo=0.5,atempo=0.5');
-                else if(opts.speed==4)
-                    this._cutVideoCommand = this._cutVideoCommand.audioFilters('atempo=2,atempo=2');
-                else
-                    this._cutVideoCommand = this._cutVideoCommand.audioFilters('atempo='+opts.speed);
-            }
-            this._cutVideoCommand = this._cutVideoCommand
-                .on('start', function (commandLine) {
-                    console.log('Cut start: ' + commandLine);
-                })
-                .on('progress', function (progress) {
-                    console.log('Processing: ' + progress.percent + '% done');
-                    if(progressCallback!=null){
-                        progressCallback(progress);
-                    }
-                })
-                .on('end', function (stdout, stderr) {
-                    console.log('Cut succeeded!');
-                    if(endCallback!=null){
-                        endCallback();
-                    }
-                })
-                .on('error', function (err, stdout, stderr) {
-                    console.log('Cut error: ', err);
-                    if(errorCallback!=null){
-                        errorCallback();
-                    }
-                })
-                .save(output);
-        }catch(e){
-            console.log(e);
-            if(errorCallback!=null){
-                errorCallback();
-            }
-        }
-    }
-    killCutVideoCommand() {
-        if (this._cutVideoCommand) {
-            this._cutVideoCommand.kill();
-        }
-    }
     videoSupport(videoPath) {
         let p = new Promise((resolve, reject) => {
             this._videoSupperCommand = ffmpeg(videoPath).ffprobe((err, data) => {
@@ -154,7 +104,7 @@ module.exports = class FfmpegClass {
                 var startTime = parseInt(getParam(request.url, "startTime"));
                 let videoCodec = this.videoSourceInfo.checkResult.videoCodecSupport ? 'copy' : 'libx264';
                 let audioCodec = this.videoSourceInfo.checkResult.audioCodecSupport ? 'copy' : 'aac';
-                this.killFfmpegCommand();
+                this.killVideoSupperCommand();
                 this._videoSupperCommand = ffmpeg()
                     .input(this.videoSourceInfo.videoSourcePath)
                     .nativeFramerate()
@@ -184,36 +134,107 @@ module.exports = class FfmpegClass {
             this._videoSupperCommand.kill();
         }
     }
+    cutVideo(input, output, opts, progressCallback,endCallback,errorCallback) {
+        try{
+            this._cutVideoCommand = ffmpeg(input)
+                .seekInput(opts.seekInput)
+                .duration(Number((opts.duration/opts.speed).toFixed(3)))
+            if(opts.speed!=1){
+                this._cutVideoCommand = this._cutVideoCommand.videoFilters('setpts='+(1/opts.speed).toFixed(2)+'*PTS');
+                if(opts.speed==0.25)
+                    this._cutVideoCommand = this._cutVideoCommand.audioFilters('atempo=0.5,atempo=0.5');
+                else if(opts.speed==4)
+                    this._cutVideoCommand = this._cutVideoCommand.audioFilters('atempo=2,atempo=2');
+                else
+                    this._cutVideoCommand = this._cutVideoCommand.audioFilters('atempo='+opts.speed);
+            }
+            if(opts.volume!=1 && !opts.noAudio){
+                this._cutVideoCommand = this._cutVideoCommand.audioFilters('volume='+Number(opts.volume.toFixed(2)));
+            }
+            if(opts.noAudio){
+                this._cutVideoCommand = this._cutVideoCommand.noAudio();
+            }
+            this._cutVideoCommand = this._cutVideoCommand
+                .on('start', function (commandLine) {
+                    console.log('Cut start: ' + commandLine);
+                })
+                .on('progress', function (progress) {
+                    console.log('Processing: ' + progress.percent + '% done');
+                    if(progressCallback!=null){
+                        progressCallback(progress);
+                    }
+                })
+                .on('end', function (stdout, stderr) {
+                    console.log('Cut succeeded!');
+                    if(endCallback!=null){
+                        endCallback();
+                    }
+                })
+                .on('error', function (err, stdout, stderr) {
+                    console.log('Cut error: ', err);
+                    if(errorCallback!=null){
+                        errorCallback();
+                    }
+                })
+                .save(output);
+        }catch(e){
+            console.log(e);
+            if(errorCallback!=null){
+                errorCallback();
+            }
+        }
+    }
+    killCutVideoCommand() {
+        if (this._cutVideoCommand) {
+            this._cutVideoCommand.kill();
+        }
+    }
 
     processVideoForMerge(input, output, opts, progressCallback,endCallback,errorCallback){
         this._mergeVideoCommand = ffmpeg()
-        .input(input)
-        .videoCodec('libx264') //libx264，libvpx，libtheora，libxvid，libvpx-vp9
-        .audioCodec('aac') //libmp3lame，libfaac，libvorbis，libfdk_aac
-        .fps(opts.frameRate)
-        .videoBitrate(opts.videoBitrate)
-        .audioBitrate(opts.audioBitrate)
-        .size(opts.resolution)
-        .autopad()
-        .on('progress', function (progress) {
-          //console.log('Processing: ' + progress.percent + '% done');
-          if(progressCallback!=null){
-            progressCallback(progress);
-          }
-        })
-        .on('end', function (stdout, stderr) {
-          console.log('Processing succeeded!');
-          if(endCallback!=null){
-            endCallback();
-          }
-        })
-        .on('error', function (err, stdout, stderr) {
-          console.log('Processing error: ', err);
-          if(errorCallback!=null){
-            errorCallback();
-          }
-        })
-        .save(output);
+            .input(input)
+            .videoCodec('libx264') //libx264，libvpx，libtheora，libxvid，libvpx-vp9
+            .audioCodec('aac') //libmp3lame，libfaac，libvorbis，libfdk_aac
+            .fps(opts.frameRate)
+            .videoBitrate(opts.videoBitrate)
+            .audioBitrate(opts.audioBitrate)
+            .duration(Number((opts.duration/opts.speed).toFixed(3)));
+        if(opts.speed!=1){
+            this._mergeVideoCommand = this._mergeVideoCommand.videoFilters('setpts='+(1/opts.speed).toFixed(2)+'*PTS');
+            if(opts.speed==0.25)
+                this._mergeVideoCommand = this._mergeVideoCommand.audioFilters('atempo=0.5,atempo=0.5');
+            else if(opts.speed==4)
+                this._mergeVideoCommand = this._mergeVideoCommand.audioFilters('atempo=2,atempo=2');
+            else
+                this._mergeVideoCommand = this._mergeVideoCommand.audioFilters('atempo='+opts.speed);
+        }
+        if(opts.volume!=1 && !opts.noAudio){
+            this._mergeVideoCommand = this._mergeVideoCommand.audioFilters('volume='+Number(opts.volume.toFixed(2)));
+        }
+        if(opts.noAudio){
+            this._mergeVideoCommand = this._mergeVideoCommand.noAudio();
+        }
+        this._mergeVideoCommand = this._mergeVideoCommand.size(opts.resolution)
+            .autopad()
+            .on('progress', function (progress) {
+            //console.log('Processing: ' + progress.percent + '% done');
+            if(progressCallback!=null){
+                progressCallback(progress);
+            }
+            })
+            .on('end', function (stdout, stderr) {
+            console.log('Processing succeeded!');
+            if(endCallback!=null){
+                endCallback();
+            }
+            })
+            .on('error', function (err, stdout, stderr) {
+            console.log('Processing error: ', err);
+            if(errorCallback!=null){
+                errorCallback();
+            }
+            })
+            .save(output);
     }
     mergeVideo(output,concatFileContent,endCallback,errorCallback){
         this._mergeVideoCommand = ffmpeg()

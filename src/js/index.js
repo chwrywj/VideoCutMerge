@@ -47,6 +47,8 @@ new Vue({
                 speed:1,
                 startTime:null,
                 endTime:null,
+                volume:1,
+                noAudio:false,
                 outputFileFullPath:null,
                 cutPercent:0
             },
@@ -54,13 +56,16 @@ new Vue({
             mergeData:[],
             mergeOptions:{
                 mergeIng:false,
+                speed:1,
                 videoBitrate:4000,
                 audioBitrate:128,
                 frameRate:25,
                 resolution:'1024x576',
+                volume:1,
+                noAudio:false,
                 outputFileFullPath:null,
                 mergeVideoTempDirName:'MergeVideoTempDir',
-                mergeVideoTempDirPath:'MergeVideoTempDir',
+                mergeVideoTempDirPath:'',
                 mergePercent:0,
                 concatFileContent:''
             },
@@ -96,13 +101,14 @@ new Vue({
 
         electronAPI.videoInfoForCut((event, playParams) => {
             console.log(playParams);
+            if(this.videoPath!=null)
+                this.getVideoElement().currentTime=0;
             this.videoPath=playParams.videoSource;
             this.videoDuration=playParams.duration;
             this.videoFrameRate=Number(playParams.frameRate);
             this.videoPlayTime=0;
             this.videoSliderValue=0;
             this.videoPlaying=false;
-            this.getVideoElement().currentTime=0;
         });
     },
     methods: {
@@ -168,6 +174,7 @@ new Vue({
                                     sourceSize:null,
                                     sourceDuration:null,
                                     sourceVideoBitrate:null,
+                                    sourceAudioBitrate:null,
                                     sourceFrameRate:null,
                                     sourceWidth:null,
                                     sourceHeight:null,
@@ -192,7 +199,7 @@ new Vue({
                                             }
                                         }
                                     });
-                                    //console.log(metaData)
+                                    console.log(metaData)
                                 });
                             }
                             this.tableLoading=false;
@@ -223,6 +230,7 @@ new Vue({
                                 sourceSize:null,
                                 sourceDuration:null,
                                 sourceVideoBitrate:null,
+                                sourceAudioBitrate:null,
                                 sourceFrameRate:null,
                                 sourceWidth:null,
                                 sourceHeight:null,
@@ -268,6 +276,10 @@ new Vue({
                 this.mergeData[i].newFormat=e;
             }
         },
+        
+        volumeTooltip(val){
+            return parseInt(val*100,10)+'%';
+        },
 
         getVideoElement(){
             if(this.videoElement==null)
@@ -278,7 +290,7 @@ new Vue({
             var durationInt=parseInt(duration,10);
             var durationStr=duration.toFixed(3)+"";
             var hour=parseInt(durationInt/(60*60),10)
-            var minute=parseInt(durationInt/60,10)
+            var minute=parseInt((durationInt%(60*60))/60,10)
             var second=parseInt(durationInt%60,10)
             return (hour<10?"0"+hour:hour)+":"+
                 (minute<10?"0"+minute:minute)+":"+
@@ -367,6 +379,7 @@ new Vue({
                     
                     electronAPI.diaglogSaveFile(this.videoExtArr)
                     .then(filePath=>{
+                        if(this.isNullOrEmpty(filePath))return;
                         this.cutOptions.cutting=true;
                         
                         this.cutOptions.outputFileFullPath=filePath;
@@ -374,10 +387,13 @@ new Vue({
                         var opts={
                             seekInput:startTime,
                             duration:endTime-startTime,
-                            speed:this.cutOptions.speed
+                            speed:this.cutOptions.speed,
+                            volume:this.cutOptions.volume,
+                            noAudio:this.cutOptions.noAudio
                         };
                         electronAPI.cutVideo(this.videoPath, this.cutOptions.outputFileFullPath, opts,
                         (progress)=>{
+                            if(this.isNullOrEmpty(progress.percent))return;
                             this.cutOptions.cutPercent=progress.percent.toFixed(1);
                         },()=>{
                             setTimeout(() => {
@@ -421,19 +437,26 @@ new Vue({
             }
             this.mergeData[scope.$index+1] = this.mergeData.splice(scope.$index, 1, this.mergeData[scope.$index+1])[0];
         },
+        killMergeVideoCommand(){
+            electronAPI.killMergeVideoCommand();
+            this.mergeOptions.mergeIng=false;
+            this.mergeData.forEach(t=>{
+                t.processed=false;
+            });
+            this.mergeOptions.mergePercent=0;
+            setTimeout(() => {
+                electronAPI.deleteDir(this.mergeOptions.mergeAudioTempDirPath);
+            }, 1000);
+        },
         goMerge(){
             if(this.mergeOptions.mergeIng){
-                electronAPI.killMergeVideoCommand();
-                this.mergeOptions.mergeIng=false;
-                this.mergeOptions.mergePercent=0;
-                setTimeout(() => {
-                    electronAPI.deleteDir(this.mergeOptions.mergeVideoTempDirPath);
-                }, 1000);
+                this.killMergeVideoCommand();
                 return;
             }
 
             electronAPI.diaglogSaveFile(this.videoExtArr)
             .then(filePath=>{
+                if(this.isNullOrEmpty(filePath))return;
                 this.mergeOptions.outputFileFullPath=filePath.replace(/\\/g,"/");
                 this.mergeOptions.mergeVideoTempDirPath=
                     this.mergeOptions.outputFileFullPath.substring(0,this.mergeOptions.outputFileFullPath.lastIndexOf('/'))
@@ -456,11 +479,16 @@ new Vue({
 
                 var tempVideoPath=this.mergeOptions.mergeVideoTempDirPath+'/'+i+'.ts';
                 electronAPI.processVideoForMerge(this.mergeData[i].sourcePath, tempVideoPath, {
+                    duration:this.mergeData[i].sourceDuration,
+                    speed:this.mergeOptions.speed,
                     videoBitrate:this.mergeOptions.videoBitrate,
                     audioBitrate:this.mergeOptions.audioBitrate,
                     frameRate:this.mergeOptions.frameRate,
-                    resolution:this.mergeOptions.resolution
+                    resolution:this.mergeOptions.resolution,
+                    volume:this.mergeOptions.volume,
+                    noAudio:this.mergeOptions.noAudio
                 },(progress)=>{
+                    if(this.isNullOrEmpty(progress.percent))return;
                     var percentData=[0,0];
                     for(var j=0;j<this.mergeData.length;j++){
                         if(j<i){
@@ -485,12 +513,7 @@ new Vue({
                     }
                 },()=>{
                     this.$message.error(this.lang('mergeFailed'));
-                    this.mergeOptions.mergeIng=false;
-                    this.mergeData.forEach(t=>{
-                        t.processed=false;
-                    });
-                    electronAPI.killMergeVideoCommand();
-                    electronAPI.deleteDir(this.mergeOptions.mergeVideoTempDirPath);
+                    this.killMergeVideoCommand();
                 });
 
                 break;
@@ -509,9 +532,7 @@ new Vue({
                 });
             },()=>{
                 this.$message.error(this.lang('mergeFailed'));
-                this.mergeOptions.mergePercent=0;
-                this.mergeOptions.mergeIng=false;
-                electronAPI.deleteDir(this.mergeOptions.mergeVideoTempDirPath);
+                this.killMergeVideoCommand();
             });
         },
 

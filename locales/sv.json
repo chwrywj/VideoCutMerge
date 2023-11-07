@@ -1,10 +1,10 @@
 {
-	"title": "Digital värld: Videoklippning och sammanslagning",
+	"title": "Digital värld: Videoklipp och sammanfogning",
   
-	"cut": "skjuv",
-	"merge": "sammanfoga",
+	"cut": "Klipp ut video",
+	"merge": "Sammanfoga video",
 	"addVideoTip1": "Stöder för närvarande bara MP4-format videor",
-	"addVideoTip2": "Om det är en video i andra format, vänligen konvertera formatet till MP4 först",
+	"addVideoTip2": "Om det är en video i andra format, vänligen konvertera formatet till MP4 först.",
 	"addVideoTip3": "Ladda ner videokonverteringsprogram",
 	"addVideoBtn": "Lägg till video",
 	"replaceVideo": "Ersätt video",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Ställ in starttiden i kontrollfältet för video",
 	"endTime": "Sluttid",
 	"endTimeTip": "Ställ in sluttid i kontrollfältet för video",
+	"volume": "volym",
+	"noAudio": "Inaktivera ljud",
 	"startCutting": "Börja skära",
 	"stopCutting": "Avbryt klippning",
   

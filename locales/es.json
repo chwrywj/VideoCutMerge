@@ -1,10 +1,10 @@
 {
-	"title": "Mundo digital: fusión de cortes de vídeo",
+	"title": "Mundo digital: Corte y fusión de vídeos",
   
-	"cut": "Corte",
-	"merge": "Fusión",
+	"cut": "Cortar vídeo",
+	"merge": "Fusionar vídeo",
 	"addVideoTip1": "Por el momento, solo se admiten videos en formato mp4.",
-	"addVideoTip2": "Si hay otro formato de video, primero convierta el formato a mp4",
+	"addVideoTip2": "Si hay otro formato de video, primero convierta el formato a mp4.",
 	"addVideoTip3": "Descargar la aplicación de conversión de vídeo",
 	"addVideoBtn": "Añadir vídeo",
 	"replaceVideo": "Cambiar vídeo",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Establecer la hora de inicio en la barra de control de vídeo",
 	"endTime": "Fin del tiempo",
 	"endTimeTip": "Establecer la hora de finalización en la barra de control de vídeo",
+	"volume": "Volumen",
+	"noAudio": "Desactivar audio",
 	"startCutting": "Comienza a cortar",
 	"stopCutting": "Cancelar Corte",
   

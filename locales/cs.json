@@ -1,10 +1,10 @@
 {
-	"title": "Digitální svět: Řezání a sloučení videa",
+	"title": "Digitální svět: Vyřezávání a sloučení videí",
   
-	"cut": "střih",
-	"merge": "sloučit",
+	"cut": "Vyříznout video",
+	"merge": "Sloučit video",
 	"addVideoTip1": "V současné době podporuje pouze videa ve formátu MP4",
-	"addVideoTip2": "Pokud se jedná o video v jiných formátech, převést prosím formát do MP4 nejprve",
+	"addVideoTip2": "Pokud se jedná o video v jiných formátech, převeďte prosím nejprve formát do MP4.",
 	"addVideoTip3": "Stáhnout aplikaci pro konverzi videa",
 	"addVideoBtn": "Přidat video",
 	"replaceVideo": "Nahradit video",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Nastavení času spuštění na ovládacím panelu videa",
 	"endTime": "Koncový čas",
 	"endTimeTip": "Nastavení koncového času na ovládacím panelu videa",
+	"volume": "objem",
+	"noAudio": "Zakázat zvuk",
 	"startCutting": "Začněte řezat",
 	"stopCutting": "Zrušit řez",
   

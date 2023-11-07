@@ -1,8 +1,8 @@
 {
-	"title": "Thế giới kỹ thuật số: cắt và sáp nhập video",
+	"title": "Thế giới kỹ thuật số: Cắt video và sáp nhập",
   
-	"cut": "Cắt",
-	"merge": "Hợp nhất",
+	"cut": "Cắt video",
+	"merge": "Hợp nhất Video",
 	"addVideoTip1": "Tạm thời chỉ hỗ trợ video định dạng mp4",
 	"addVideoTip2": "Đối với các định dạng video khác, trước tiên hãy chuyển đổi định dạng sang mp4.",
 	"addVideoTip3": "Tải về ứng dụng chuyển đổi video",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Đặt thời gian bắt đầu trên thanh điều khiển video",
 	"endTime": "Thời gian kết thúc",
 	"endTimeTip": "Đặt thời gian kết thúc trên thanh điều khiển video",
+	"volume": "Âm lượng",
+	"noAudio": "Tắt âm thanh",
 	"startCutting": "Bắt đầu cắt",
 	"stopCutting": "Hủy cắt",
   

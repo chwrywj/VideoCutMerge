@@ -1,10 +1,10 @@
 {
-	"title": "Digitalni svet: rezanje in združevanje videoposnetkov",
+	"title": "Digitalni svet: videoposnetki in združevanje",
   
-	"cut": "striženje",
-	"merge": "združi",
+	"cut": "Izreži video",
+	"merge": "Združi video",
 	"addVideoTip1": "Trenutno podpira samo videoposnetke v formatu MP4",
-	"addVideoTip2": "Če je video v drugih formatih, prosimo, pretvorite format v MP4 najprej",
+	"addVideoTip2": "Če je video v drugih formatih, prosimo, pretvorite format v MP4 najprej.",
 	"addVideoTip3": "Prenesi program za pretvorbo videoposnetkov",
 	"addVideoBtn": "Dodaj video",
 	"replaceVideo": "Zamenjaj video",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Nastavite začetni čas v vrstici za nadzor videoposnetkov",
 	"endTime": "Končni čas",
 	"endTimeTip": "Nastavite končni čas v nadzorni vrstici videoposnetka",
+	"volume": "prostornina",
+	"noAudio": "Onemogoči zvok",
 	"startCutting": "Začnite rezati.",
 	"stopCutting": "Prekliči izrez",
   

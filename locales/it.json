@@ -1,10 +1,10 @@
 {
-	"title": "Mondo digitale: taglio video e fusione",
+	"title": "Mondo digitale: video clip e fusione",
   
-	"cut": "taglio",
-	"merge": "fusione",
+	"cut": "Taglia video",
+	"merge": "Unisci video",
 	"addVideoTip1": "Attualmente supporta solo i video in formato MP4",
-	"addVideoTip2": "Se si tratta di un video in altri formati, prima convertire il formato in MP4",
+	"addVideoTip2": "Se si tratta di un video in altri formati, si prega di convertire prima il formato in MP4.",
 	"addVideoTip3": "Scarica l'applicazione di conversione video",
 	"addVideoBtn": "Aggiungi video",
 	"replaceVideo": "Sostituisci video",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Impostare l'ora di inizio nella barra di controllo video",
 	"endTime": "Tempo di fine",
 	"endTimeTip": "Impostare l'ora di fine nella barra di controllo video",
+	"volume": "volume",
+	"noAudio": "Disabilita audio",
 	"startCutting": "Inizia a tagliare",
 	"stopCutting": "Annulla taglio",
   

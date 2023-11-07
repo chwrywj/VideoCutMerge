@@ -1,10 +1,10 @@
 {
-	"title": "數字世界:視頻截切合并",
+	"title": "數字世界: 視頻剪切合并",
   
-	"cut": "剪切",
-	"merge": "合并",
+	"cut": "剪切視頻",
+	"merge": "合并視頻",
 	"addVideoTip1": "暫時只支持mp4格式視頻",
-	"addVideoTip2": "若是其它格式視頻，請先把格式轉換為mp4",
+	"addVideoTip2": "若是其它格式視頻，請先把格式轉換為mp4。",
 	"addVideoTip3": "下載視頻轉換應用程序",
 	"addVideoBtn": "添加視頻",
 	"replaceVideo": "更換視頻",
@@ -20,6 +20,8 @@
 	"startTimeTip": "在視頻控制欄設置開始時間",
 	"endTime": "結束時間",
 	"endTimeTip": "在視頻控制欄設置結束時間",
+	"volume": "音量",
+	"noAudio": "禁用音頻",
 	"startCutting": "開始剪切",
 	"stopCutting": "取消剪切",
   

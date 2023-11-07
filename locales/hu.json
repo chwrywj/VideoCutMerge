@@ -1,10 +1,10 @@
 {
 	"title": "Digitális világ: videóvágás és egyesítés",
   
-	"cut": "nyírás",
-	"merge": "egyesítés",
+	"cut": "Videó kivágása",
+	"merge": "Videó egyesítése",
 	"addVideoTip1": "Jelenleg csak MP4 formátumú videókat támogat",
-	"addVideoTip2": "Ha ez egy videó más formátumban, kérjük, konvertálja a formátumot MP4-re először",
+	"addVideoTip2": "Ha ez egy videó más formátumban, kérjük, konvertálja a formátumot MP4-re először.",
 	"addVideoTip3": "Videokonverziós alkalmazás letöltése",
 	"addVideoBtn": "Videó hozzáadása",
 	"replaceVideo": "Videó cseréje",
@@ -20,6 +20,8 @@
 	"startTimeTip": "A kezdési idő beállítása a videó vezérlősávon",
 	"endTime": "Végidő",
 	"endTimeTip": "A videó vezérlősávján a befejezési idő beállítása",
+	"volume": "térfogat",
+	"noAudio": "Hang letiltása",
 	"startCutting": "Vágás elkezdése",
 	"stopCutting": "Vágás törlése",
   

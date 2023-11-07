@@ -1,10 +1,10 @@
 {
-	"title": "Digitale wereld: Video snijden en samenvoegen",
+	"title": "Digitale wereld: Video knippen en samenvoegen",
   
-	"cut": "schaar",
-	"merge": "samenvoegen",
+	"cut": "Video knippen",
+	"merge": "Video samenvoegen",
 	"addVideoTip1": "Ondersteunt momenteel alleen video's in MP4-formaat",
-	"addVideoTip2": "Als het een video in andere formaten is, converteer het formaat eerst naar MP4",
+	"addVideoTip2": "Als het een video in andere formaten is, converteer het formaat dan eerst naar MP4.",
 	"addVideoTip3": "Video conversie applicatie downloaden",
 	"addVideoBtn": "Video toevoegen",
 	"replaceVideo": "Video vervangen",
@@ -20,6 +20,8 @@
 	"startTimeTip": "De begintijd instellen in de videocontrolebalk",
 	"endTime": "Eindtijd",
 	"endTimeTip": "De eindtijd instellen in de videocontrolebalk",
+	"volume": "volume",
+	"noAudio": "Audio uitschakelen",
 	"startCutting": "Begin met snijden",
 	"stopCutting": "Knip annuleren",
   
@@ -54,7 +56,7 @@
 	"delSuccess": "Succesvol verwijderd",
 	"settingTimeTip1": "De video wordt momenteel gesneden en deze bewerking kan niet worden uitgevoerd",
 	"settingTimeTip2": "De eindtijd moet groter zijn dan de begintijd",
-	"cutOver": "Knip voltooid",
+	"cutOver": "Cut voltooid",
 	"CutFailed": "Knippen mislukt",
 	"mergeOver": "Samenvoegen voltooid",
 	"mergeFailed": "Samenvoegen mislukt"

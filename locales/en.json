@@ -1,10 +1,10 @@
 {
-	"title": "Digital World: Video Cutting and Merging",
+	"title": "Digital World: Video Clipping and Merging",
   
-	"cut": "Shear",
-	"merge": "Merge",
+	"cut": "Cut Video",
+	"merge": "Merge Video",
 	"addVideoTip1": "Currently only supports MP4 format videos",
-	"addVideoTip2": "If it is a video in other formats, please convert the format to MP4 first",
+	"addVideoTip2": "If it is a video in other formats, please convert the format to MP4 first.",
 	"addVideoTip3": "Download video conversion application",
 	"addVideoBtn": "Add Video",
 	"replaceVideo": "Replace Video",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Set the start time in the video control bar",
 	"endTime": "End time",
 	"endTimeTip": "Set the end time in the video control bar",
+	"volume": "Volume",
+	"noAudio": "Disable audio",
 	"startCutting": "Start cutting",
 	"stopCutting": "Cancel Cut",
   

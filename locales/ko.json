@@ -1,10 +1,10 @@
 {
-	"title": "디지털 세계: 비디오 캡처 병합",
+	"title": "디지털 세계: 비디오 잘라내기 통합",
   
-	"cut": "잘라내기",
-	"merge": "병합",
+	"cut": "비디오 잘라내기",
+	"merge": "비디오 병합",
 	"addVideoTip1": "일시적으로 mp4 형식의 비디오만 지원",
-	"addVideoTip2": "다른 형식의 비디오의 경우 먼저 mp4로 변환",
+	"addVideoTip2": "다른 형식의 비디오의 경우 먼저 형식을 mp4로 변환합니다.",
 	"addVideoTip3": "비디오 변환 응용 프로그램 다운로드",
 	"addVideoBtn": "비디오 추가",
 	"replaceVideo": "비디오 교체",
@@ -20,6 +20,8 @@
 	"startTimeTip": "비디오 컨트롤 막대에서 시작 시간 설정",
 	"endTime": "종료 시간",
 	"endTimeTip": "비디오 컨트롤 막대에서 종료 시간 설정",
+	"volume": "볼륨",
+	"noAudio": "오디오 비활성화",
 	"startCutting": "잘라내기 시작",
 	"stopCutting": "잘라내기 취소",
   

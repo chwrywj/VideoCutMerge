@@ -1,10 +1,10 @@
 {
-	"title": "Digitale Welt: Video schneiden und zusammenführen",
+	"title": "Digitale Welt: Video Clipping und Zusammenführung",
   
-	"cut": "Schere",
-	"merge": "Zusammenführen",
+	"cut": "Video ausschneiden",
+	"merge": "Video zusammenführen",
 	"addVideoTip1": "Derzeit unterstützt nur MP4 Format Videos",
-	"addVideoTip2": "Wenn es sich um ein Video in anderen Formaten handelt, konvertieren Sie bitte zuerst das Format in MP4",
+	"addVideoTip2": "Wenn es sich um ein Video in anderen Formaten handelt, konvertieren Sie das Format bitte zuerst in MP4.",
 	"addVideoTip3": "Videokonvertierungsanwendung herunterladen",
 	"addVideoBtn": "Video hinzufügen",
 	"replaceVideo": "Video ersetzen",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Legen Sie die Startzeit in der Videosteuerleiste fest",
 	"endTime": "Endzeit",
 	"endTimeTip": "Legen Sie die Endzeit in der Video-Steuerleiste fest",
+	"volume": "Volumen",
+	"noAudio": "Audio deaktivieren",
 	"startCutting": "Schneiden beginnen",
 	"stopCutting": "Schnitt abbrechen",
   

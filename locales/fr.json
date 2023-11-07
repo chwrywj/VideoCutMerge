@@ -1,10 +1,10 @@
 {
-	"title": "Monde numérique: fusion de coupure vidéo",
+	"title": "Monde numérique: fusion de clips vidéo",
   
-	"cut": "Couper",
-	"merge": "Consolidation",
+	"cut": "Couper la vidéo",
+	"merge": "Fusionner des vidéos",
 	"addVideoTip1": "Temporairement, seules les vidéos au format MP4 sont prises en charge",
-	"addVideoTip2": "Pour d'autres formats de vidéo, convertissez d'abord le format en MP4",
+	"addVideoTip2": "Pour d'autres formats de vidéo, convertissez d'abord le format en MP4.",
 	"addVideoTip3": "Télécharger l'application de conversion vidéo",
 	"addVideoBtn": "Ajouter une vidéo",
 	"replaceVideo": "Remplacer la vidéo",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Définir l'heure de début dans la barre de contrôle vidéo",
 	"endTime": "Heure de fin",
 	"endTimeTip": "Définir l'heure de fin dans la barre de contrôle vidéo",
+	"volume": "Volume",
+	"noAudio": "Désactiver l'audio",
 	"startCutting": "Commencer à couper",
 	"stopCutting": "Annuler le cisaillement",
   

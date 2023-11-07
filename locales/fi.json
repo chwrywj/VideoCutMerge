@@ -1,10 +1,10 @@
 {
-	"title": "Digitaalinen maailma: Videoiden leikkaaminen ja yhdistäminen",
+	"title": "Digitaalinen maailma: videoleikkeet ja yhdistäminen",
   
-	"cut": "leikkaus",
-	"merge": "yhdistäminen",
+	"cut": "Leikkaa video",
+	"merge": "Yhdistä video",
 	"addVideoTip1": "Tällä hetkellä tukee vain MP4-muotoisia videoita",
-	"addVideoTip2": "Jos se on video muissa muodoissa, muunna muoto MP4 ensin",
+	"addVideoTip2": "Jos se on video muissa muodoissa, muunna muoto MP4 ensin.",
 	"addVideoTip3": "Lataa videon muunnossovellus",
 	"addVideoBtn": "Lisää video",
 	"replaceVideo": "Korvaa video",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Aseta videon ohjauspalkin aloitusaika",
 	"endTime": "Loppuaika",
 	"endTimeTip": "Aseta lopun aika videon ohjauspalkille",
+	"volume": "tilavuus",
+	"noAudio": "Poista ääni käytöstä",
 	"startCutting": "Aloita leikkaaminen",
 	"stopCutting": "Peruuta leikkaus",
   

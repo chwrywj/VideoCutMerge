@@ -1,10 +1,10 @@
 {
-	"title": "Lumea digitală: tăiere video și fuzionare",
+	"title": "Lumea digitală: Clipping și fuzionare video",
   
-	"cut": "forfecare",
-	"merge": "îmbinare",
+	"cut": "Taie video",
+	"merge": "Îmbină video",
 	"addVideoTip1": "În prezent acceptă doar videoclipuri în format MP4",
-	"addVideoTip2": "Dacă este un video în alte formate, vă rugăm să convertiți formatul în MP4 mai întâi",
+	"addVideoTip2": "Dacă este un video în alte formate, vă rugăm să convertiți formatul în MP4 mai întâi.",
 	"addVideoTip3": "Descărcați aplicația de conversie video",
 	"addVideoBtn": "Adaugă video",
 	"replaceVideo": "Înlocuiește videoclipul",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Setați ora de pornire în bara de control video",
 	"endTime": "Ora sfârșitului",
 	"endTimeTip": "Setați ora de sfârșit în bara de control video",
+	"volume": "volum",
+	"noAudio": "Dezactivează audio",
 	"startCutting": "Începe tăierea",
 	"stopCutting": "Anulează tăierea",
   

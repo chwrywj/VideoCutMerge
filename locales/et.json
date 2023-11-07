@@ -1,10 +1,10 @@
 {
-	"title": "Digitaalne maailm: videolõikamine ja ühendamine",
+	"title": "Digitaalne maailm: videolõiked ja ühendamine",
   
-	"cut": "nihke",
-	"merge": "ühendamine",
+	"cut": "Lõika video",
+	"merge": "Ühenda video",
 	"addVideoTip1": "Praegu toetab ainult MP4 formaadis videoid",
-	"addVideoTip2": "Kui see on video teistes vormingutes, palun teisendada vormingus MP4 esmalt",
+	"addVideoTip2": "Kui see on video teistes vormingutes, palun teisendada vormingus MP4 kõigepealt.",
 	"addVideoTip3": "Video teisendamise rakenduse allalaadimine",
 	"addVideoBtn": "Lisa video",
 	"replaceVideo": "Video asendamine",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Video juhtimisriba algusaja määramine",
 	"endTime": "Lõppaeg",
 	"endTimeTip": "Lõpuaja määramine video juhtimisribal",
+	"volume": "maht",
+	"noAudio": "Heli keelamine",
 	"startCutting": "Alusta lõikamist",
 	"stopCutting": "Tühista lõige",
   

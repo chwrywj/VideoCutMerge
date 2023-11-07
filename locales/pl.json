@@ -1,10 +1,10 @@
 {
-	"title": "Cyfrowy świat: cięcie i łączenie wideo",
+	"title": "Cyfrowy świat: przycinanie i łączenie wideo",
   
-	"cut": "ścinanie",
-	"merge": "połączenie",
+	"cut": "Wytnij wideo",
+	"merge": "Połącz wideo",
 	"addVideoTip1": "Obecnie obsługuje tylko filmy w formacie MP4",
-	"addVideoTip2": "Jeśli jest to film w innych formatach, najpierw przekonwertuj format do MP4",
+	"addVideoTip2": "Jeśli jest to film w innych formatach, najpierw przekonwertuj format do MP4.",
 	"addVideoTip3": "Pobierz aplikację do konwersji wideo",
 	"addVideoBtn": "Dodaj wideo",
 	"replaceVideo": "Zastąp wideo",
@@ -20,6 +20,8 @@
 	"startTimeTip": "Ustaw czas rozpoczęcia na pasku sterowania wideo",
 	"endTime": "Czas zakończenia",
 	"endTimeTip": "Ustaw czas zakończenia na pasku sterowania wideo",
+	"volume": "objętość",
+	"noAudio": "Wyłącz dźwięk",
 	"startCutting": "Rozpocząć cięcie",
 	"stopCutting": "Anuluj cięcie",
   
