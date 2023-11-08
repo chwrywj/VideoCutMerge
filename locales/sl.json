@@ -36,6 +36,7 @@
 	"sourceAudioBitrate": "Bitna hitrost zvoka",
 	"sourceFrameRate": "Hitrost sličic",
 	"sourceResolution": "Ločljivost videoposnetkov",
+	"operate": "operacija",
 	"moveUp": "Premakni se gor",
 	"moveDown": "Premakni se dol",
 	"delete": "izbriši",

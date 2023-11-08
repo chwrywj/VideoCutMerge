@@ -36,6 +36,7 @@
 	"sourceAudioBitrate": "Звуковой битрейт",
 	"sourceFrameRate": "Частота кадров",
 	"sourceResolution": "Разрешение видео",
+	"operate": "Операция",
 	"moveUp": "Переместить вверх",
 	"moveDown": "Переместить вниз",
 	"delete": "Удалить",

@@ -36,6 +36,7 @@
 	"sourceAudioBitrate": "오디오 비트레이트",
 	"sourceFrameRate": "프레임 속도",
 	"sourceResolution": "비디오 해상도",
+	"operate": "작업",
 	"moveUp": "위로 이동",
 	"moveDown": "아래로 이동",
 	"delete": "삭제",

@@ -36,6 +36,7 @@
 	"sourceAudioBitrate": "Heli bitikiirus",
 	"sourceFrameRate": "Kaadrisagedus",
 	"sourceResolution": "Video eraldusvõime",
+	"operate": "operatsioon",
 	"moveUp": "Liiguta üles",
 	"moveDown": "Liiguta alla",
 	"delete": "kustuta",

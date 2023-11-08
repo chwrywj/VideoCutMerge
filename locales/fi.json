@@ -36,6 +36,7 @@
 	"sourceAudioBitrate": "Äänen bittinopeus",
 	"sourceFrameRate": "Kuvanopeus",
 	"sourceResolution": "Videotarkkuus",
+	"operate": "toiminta",
 	"moveUp": "Siirry ylös",
 	"moveDown": "Siirrä alas",
 	"delete": "Poista",

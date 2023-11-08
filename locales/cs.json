@@ -36,6 +36,7 @@
 	"sourceAudioBitrate": "Bitový tok zvuku",
 	"sourceFrameRate": "Rychlost snímků",
 	"sourceResolution": "Rozlišení videa",
+	"operate": "provoz",
 	"moveUp": "Přesunout nahoru",
 	"moveDown": "Přesunout dolů",
 	"delete": "smazat",

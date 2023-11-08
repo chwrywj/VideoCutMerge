@@ -244,7 +244,7 @@
                                     {{scope.row.sourceVideoBitrate!=null?(scope.row.sourceVideoBitrate/1024).toFixed(0)+"kbps":""}}
                                 </template>
                             </el-table-column>
-                            <el-table-column prop="sourceAudioBitrate" :label="lang('sourceAudioBitrate')" min-width="90px" show-overflow-tooltip align="right">
+                            <el-table-column prop="sourceAudioBitrate" :label="lang('sourceAudioBitrate')" min-width="100px" show-overflow-tooltip align="right">
                                 <template slot-scope="scope">
                                     {{scope.row.sourceAudioBitrate!=null?(scope.row.sourceAudioBitrate/1024).toFixed(0)+"kbps":""}}
                                 </template>
@@ -254,12 +254,12 @@
                                     {{scope.row.sourceFrameRate!=null?scope.row.sourceFrameRate+"fps":""}}
                                 </template>
                             </el-table-column>
-                            <el-table-column prop="sourceResolution" :label="lang('sourceResolution')" min-width="100px" show-overflow-tooltip align="right">
+                            <el-table-column prop="sourceResolution" :label="lang('sourceResolution')" min-width="110px" show-overflow-tooltip align="right">
                                 <template slot-scope="scope">
                                     {{scope.row.sourceWidth!=null && scope.row.sourceHeight!=null?scope.row.sourceWidth+"x"+scope.row.sourceHeight:""}}
                                 </template>
                             </el-table-column>
-                            <el-table-column label="操作" width="90px" fixed="right" align="center">
+                            <el-table-column :label="lang('operate')" width="90px" fixed="right" align="center">
                                 <div slot-scope="scope" class="operate">
                                     <i class="my-icon my-icon-shangyi" :class="{'disabled': scope.$index==0 || mergeOptions.mergeIng}" @click="moveUpMergeDataRow(scope)" :title="lang('moveUp')"></i>
                                     <i class="my-icon my-icon-xiayi" :class="{'disabled': scope.$index==mergeData.length-1 || mergeOptions.mergeIng}" @click="moveDownMergeDataRow(scope)" :title="lang('moveDown')"></i>
@@ -351,7 +351,7 @@
         </div>
         <div class="footer">
             <span>{{lang('support')}}:&nbsp;</span>
-            <el-link type="primary" @click="openBrowser('https://www.world0101.com?from=VideoCutMerge')">{{lang('digitalWorld')}}(world0101.com)</el-link>
+            <el-link type="primary" @click="openBrowser('https://www.world0101.com/Redirect?url=/Soft/Detail/6&from=VideoCutMerge')">{{lang('digitalWorld')}}(world0101.com)</el-link>
             <span style="margin-left:20px;"></span>
             <el-link type="primary" @click="openBrowser('https://www.world0101.com/Redirect?type=donate&from=VideoCutMerge')">{{lang('donata')}}</el-link>
         </div>

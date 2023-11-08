@@ -36,6 +36,7 @@
 	"sourceAudioBitrate": "Bitrate audio",
 	"sourceFrameRate": "Velocità fotogramma",
 	"sourceResolution": "Risoluzione video",
+	"operate": "operazione",
 	"moveUp": "Sposta su",
 	"moveDown": "Sposta giù",
 	"delete": "elimina",

@@ -36,6 +36,7 @@
 	"sourceAudioBitrate": "Аудио битчестота",
 	"sourceFrameRate": "Скорост на кадрите",
 	"sourceResolution": "Разделителна способност на видеото",
+	"operate": "операция",
 	"moveUp": "Преместване нагоре",
 	"moveDown": "Преместване надолу",
 	"delete": "изтриване",

@@ -36,6 +36,7 @@
 	"sourceAudioBitrate": "音頻比特率",
 	"sourceFrameRate": "幀速率",
 	"sourceResolution": "視頻分辨率",
+	"operate": "操作",
 	"moveUp": "上移",
 	"moveDown": "下移",
 	"delete": "刪除",

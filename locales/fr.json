@@ -36,6 +36,7 @@
 	"sourceAudioBitrate": "Débit binaire audio",
 	"sourceFrameRate": "Frame Rate",
 	"sourceResolution": "Résolution vidéo",
+	"operate": "Opérations",
 	"moveUp": "Déplacement vers le Haut",
 	"moveDown": "Descendre",
 	"delete": "Supprimer",
