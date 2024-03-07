@@ -9,7 +9,7 @@ module.exports = defineConfig({
       webSecurity: false,
       builderOptions: {
         productName: `Video cut merge`,
-        appId: 'com.world0101.videocutmerge',
+        appId: 'net.toollist.videocutmerge',
         asar: true,
         linux: {
           target: ['deb'],
